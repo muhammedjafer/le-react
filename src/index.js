@@ -1,62 +1,57 @@
-import React from 'react';
-import './index.css';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import "./index.css";
+import pizzaData from "./data.js";
+import ReactDOM from "react-dom/client";
 
 function App() {
     return (
-        <div className='container'>
+        <div className="container">
             <Header />
             <Menu />
             <Footer />
         </div>
-    )
+    );
 }
 
 function Header() {
-
-    const style = { color: 'red', fontSize: '48px', textTransform: 'uppercase'};
+    const style = { color: "red", fontSize: "48px", textTransform: "uppercase" };
 
     return (
-        <header className='header footer'>
-            <h1 style={style}>
-                hello the header of the react elements
-            </h1> 
+        <header className="header footer">
+            <h1 style={style}>hello the header of the react elements</h1>
         </header>
     );
 }
 
 function Menu() {
-    return (
-        <div>
-            <h2>Our menu</h2>
-            <main className='menu'>
-                <Pizza name='Pizza Spinaci' ingredient='tomato, mozarella, spinach, and more' photoName='pizzas/spinaci.jpg' price={10} />
+    const pizzaList = pizzaData.map((pizza) => <Pizza pizza={pizza} key={pizza.name} />);
 
-                <Pizza name='Pizza Funghi' ingredient='tomato, mozarella' photoName='pizzas/funghi.jpg' price={12} />
-            </main>
-        </div>
+    return (
+        <main className="menu">
+            <h2>Our menu</h2>
+            <ul className="pizzas">{pizzaList}</ul>
+        </main>
     );
 }
 
 function Footer() {
-    return <footer className='footer'>{new Date().toLocaleDateString()}. we are the world</footer>
+    return <footer className="footer">{new Date().toLocaleDateString()}. we are the world</footer>;
 }
 
 function Pizza(props) {
-   
     return (
-        <div className='pizza'>
-            <img src={props.photoName} alt="no-data" />
+        <li className="pizza">
+            <img src={props.pizza.photoName} alt="no-data" />
             <div>
-                <h3>{props.name}</h3>
-                <p>{props.ingredient}</p>
-                <span>{props.price}</span>
+                <h3>{props.pizza.name}</h3>
+                <p>{props.pizza.ingredient}</p>
+                <span>{props.pizza.price}</span>
             </div>
-        </div>
+        </li>
     );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
     <React.StrictMode>
