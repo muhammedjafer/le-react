@@ -38,14 +38,14 @@ function Footer() {
     return <footer className="footer">{new Date().toLocaleDateString()}. we are the world</footer>;
 }
 
-function Pizza(props) {
+function Pizza({pizza}) {
     return (
         <li className="pizza">
-            <img src={props.pizza.photoName} alt="no-data" />
+            <img src={pizza.photoName} alt="no-data" />
             <div>
-                <h3>{props.pizza.name}</h3>
-                <p>{props.pizza.ingredient}</p>
-                <span>{props.pizza.price}</span>
+                <h3>{pizza.name}</h3>
+                <p>{pizza.ingredient}</p>
+                <span>{pizza.price}</span>
             </div>
         </li>
     );
