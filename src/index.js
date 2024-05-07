@@ -58,3 +58,5 @@ root.render(
         <App />
     </React.StrictMode>
 );
+
+//End of beginner section for react.js course
