@@ -1,7 +1,16 @@
-export default function App() {}
+export default function App() {
+  return (
+  <div className="app">
+    <Logo />
+    <Form />
+    <PackingList />
+    <Stats />
+  </div>
+  )
+}
 
 function Logo() {
-  return <h1>🤣😒😒</h1>;
+  return <h1>🤣Far away😒</h1>;
 }
 
 function Form() {
@@ -18,7 +27,7 @@ function PackingList() {
 
 function Stats() {
   return <>
-    <footer>        
+    <footer className="stats">        
       <em>You have X items on your list, and you packed X already</em>
     </footer>
   </>
