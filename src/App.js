@@ -1,46 +1,25 @@
-import { useState } from "react";
+export default function App() {}
 
-const messages = ["learn react", "learn vue", "learn angular"];
+function Logo() {
+  return <h1>🤣😒😒</h1>;
+}
 
-export default function App() {
-    const [step, setStep] = useState(1);
-    const [isOpen, setIsOpen] = useState(true);
+function Form() {
+  return <div className="add-form">
+    <h3>What you need for your trip?</h3>
+  </div>
+}
 
-    function handlePrevious() {
-        if (step > 1) setStep(step - 1);
-    }
+function PackingList() {
+  return <div className="list">
+    LIST
+  </div>
+}
 
-    function handleNext() {
-        if (step < 3) setStep(step + 1);
-    }
-
-    return (
-        <>
-            <button className="close" onClick={() => setIsOpen(!isOpen)}>
-                &times;
-            </button>
-            {isOpen && (
-                <div className="steps">
-                    <div className="numbers">
-                        <div className={step >= 1 ? "active" : ""}>1</div>
-                        <div className={step >= 2 ? "active" : ""}>2</div>
-                        <div className={step >= 3 ? "active" : ""}>3</div>
-                    </div>
-
-                    <p className="message">
-                        Step {step}: {messages[step - 1]}
-                    </p>
-
-                    <div className="buttons">
-                        <button style={{ backgroundColor: "#7950f2", color: "#fff" }} onClick={handlePrevious}>
-                            Previous
-                        </button>
-                        <button style={{ backgroundColor: "#7950f2", color: "#fff" }} onClick={handleNext}>
-                            Next
-                        </button>
-                    </div>
-                </div>
-            )}
-        </>
-    );
+function Stats() {
+  return <>
+    <footer>        
+      <em>You have X items on your list, and you packed X already</em>
+    </footer>
+  </>
 }
