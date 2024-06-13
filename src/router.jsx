@@ -3,6 +3,7 @@ import Login from "./views/Login";
 import SignUp from "./views/SignUp";
 import NotFound from "./views/NotFound";
 import Dashboard from "./views/Dashboard";
+import { Navigate } from "react-router-dom";
 import GuestLayout from "./components/GuestLayout";
 import DefaultLayout from "./components/DefaultLayout";
 import { createBrowserRouter } from "react-router-dom";
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Navigate to='/users' />
+                element: <Navigate to="/users" />
             },
             {
                 path: '/dashboard',
